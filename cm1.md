@@ -75,10 +75,11 @@ Soit n - 1 equations
 
 $$
 s_i'(x) = 2a_i(x-x_i) + b_i
+\\ z_i = b_i \forall\ i\in [0, n-1]
 $$
 
-$$
 
+$$
 H_4 \Rightarrow s_{i-1}'(x_i) = s_i'(x_i) \forall i \in [1, n-1]\\
 \text{Soit $n-1$ equations}
 $$
@@ -89,44 +90,41 @@ $$
 
 $$
 \begin{cases}
-S(x_n) = f(x_n) \Rightarrow s_{n-1}(x_n) = y_n \Rightarrow a_{n-1}(x_n - x_{n-1})^2+b_{n-1}(x_n-x_{n-1})+c_{n-1} = y_n\\
+S(x_n) = f(x_n) \Rightarrow s_{n-1}(x_n) = y_n \Rightarrow a_{n-1}(x_n - x_{n-1})^2+z_{n-1}(x_n-x_{n-1})+c_{n-1} = y_n\\
 s_{i-1}(x_i) = s_i(x_i) \Rightarrow
 \begin{cases}
-a_0(x_1-x_{0})^2+b_0(x_1-x_0) + c_0 = c_1\\
-a_1(x_2-x_1)^2+b_1(x_2-x_1) + c_1 = c_2\\
+a_0(x_1-x_{0})^2+z_0(x_1-x_0) + c_0 = c_1\\
+a_1(x_2-x_1)^2+z_1(x_2-x_1) + c_1 = c_2\\
 \ldots\\
-a_i(x_{i+1}-x_i)^2+b_i(x_{i+1}-x_i) + c_i = c_{i+1} \; (Eq2i)\\
+a_i(x_{i+1}-x_i)^2+z_i(x_{i+1}-x_i) + c_i = c_{i+1} \; (Eq2i)\\
 \ldots\\
-a_{n-2}(x_{n-1}-x_{n-2})^2+b_{n-2}(x_{n-1}-x_{n-2}) + c_{n-2} = c_{n-1}\\
+a_{n-2}(x_{n-1}-x_{n-2})^2+z_{n-2}(x_{n-1}-x_{n-2}) + c_{n-2} = c_{n-1}\\
 \end{cases}
 \\
 s_{i-1}'(x_i) = s_i'(x_i) \Rightarrow 
 \begin{cases}
-  2a_0(x_1-x_0) + b_0 = b_1\\
-  2a_1(x_2-x_1) + b_1 = b_2\\
+  2a_0(x_1-x_0) + z_0 = z_1\\
+  2a_1(x_2-x_1) + z_1 = z_2\\
   \ldots\\
-  2a_i(x_{i+1}-x_i) + b_i = b_{i+1} \; (Eq3i)\\
+  2a_i(x_{i+1}-x_i) + z_i = z_{i+1} \; (Eq3i)\\
   \ldots\\
-  2a_{n-2}(x_{n-1}-x_{n-2}) + b_{n-2} = b_{n-1}\\
+  2a_{n-2}(x_{n-1}-x_{n-2}) + z_{n-2} = z_{n-1}\\
 \end{cases}
     \Rightarrow
-      a_i = \frac{b_{i+1} - b_i}{2(x_{i+1} - x_i)} \; (Eq4i)
+      a_i = \frac{z_{i+1} - z_i}{2(x_{i+1} - x_i)} \; (Eq4i)
 \end{cases}
 $$
-
 En injectant Eq4i dans Eq2i, on obtient
-
 $$
-\frac{b_{i+1} - b_i}{2(x_{i+1} - x_i)}(x_{i+1} - x_i)^2+b_i(x_{i+1} - x_i)+c_i=c_{i+1}\\
-\Rightarrow \frac{1}{2}(b_{i+1} - b_i)(x_{i+1} - x_i)+b_i(x_{i+1} - x_i)= c_{i+1}-c_i\\
-\Rightarrow (x_{i+1} - x_i)(\frac{1}{2}(b_{i+1} - b_i+2b_i)) = c_{i+1}-c_i\\
-\Rightarrow (x_{i+1} - x_i)(\frac{1}{2}(b_{i+1} + b_i)) = c_{i+1}-c_i\\
-
+\frac{z_{i+1} - z_i}{2(x_{i+1} - x_i)}(x_{i+1} - x_i)^2+z_i(x_{i+1} - x_i)+c_i=c_{i+1}\\
+\Rightarrow \frac{1}{2}(z_{i+1} - z_i)(x_{i+1} - x_i)+z_i(x_{i+1} - x_i)= c_{i+1}-c_i\\
+\Rightarrow (x_{i+1} - x_i)(\frac{1}{2}(z_{i+1} - z_i+2z_i)) = c_{i+1}-c_i\\
+\Rightarrow (x_{i+1} - x_i)(\frac{1}{2}(z_{i+1} + z_i)) = c_{i+1}-c_i\\
 \Rightarrow 
-\frac{1}{2}(b_{i+1} + b_i) = \frac{c_{i+1}-c_i}{x_{i+1} - x_i}
+\frac{1}{2}(z_{i+1} + z_i) = \frac{c_{i+1}-c_i}{x_{i+1} - x_i}
 \\
 \Rightarrow
-b_{i+1} = 2\frac{c_{i+1}-c_i}{x_{i+1} - x_i} - b_i
+z_{i+1} = 2\frac{c_{i+1}-c_i}{x_{i+1} - x_i} - z_i
 $$
 
 $$
